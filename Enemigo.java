@@ -5,4 +5,5 @@ public class Enemigo extends Personaje {
         super(nombre, salud, ataque, "!No tan rápido!", "¡Mis compañeros me vengaran!", "¡Esto fue por mis amigos!");
         this.habilidad = habilidad;
     }
+
 }
