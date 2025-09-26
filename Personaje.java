@@ -39,10 +39,13 @@ public class Personaje {
     }
 
     public void recibirDaño(int daño) {
-        salud -= daño;
+        this.salud -= daño;
         if (salud < 0) {
             salud = 0;
         }
+    }
+    public void curar(int cura){
+        this.salud += cura;
     }
 
     public boolean estaVivo() {
