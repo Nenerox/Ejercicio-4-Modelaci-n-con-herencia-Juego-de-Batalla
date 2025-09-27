@@ -28,7 +28,7 @@ public class main {
         while (controlador.jugador.estaVivo() && salir == false) {
         contadorRondas++; // Cada exploración suma una ronda
         //se generan una cantidad y tipos de enemigos al azar
-        List<Personaje> bestias = controlador.generarEnemigos(2 + random.nextInt(3)); 
+        List<Personaje> bestias = controlador.generarEnemigos(1 + random.nextInt(3)); 
         System.out.println(controlador.jugador.getMensaje_Inicio());
         for (Personaje e : bestias) System.out.println(e.getMensaje_Inicio());
         
