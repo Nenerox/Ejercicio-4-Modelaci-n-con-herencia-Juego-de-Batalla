@@ -13,4 +13,10 @@ public class Enemigo extends Personaje {
     public int usarHabilidad() {
         return habilidad.getAtaque();
     }
+    public String getNombreHabilidad(){
+        return habilidad.getNombre();
+    }
+    public int getAtaqueHabilidad(){
+        return habilidad.getAtaque();
+    }
 }

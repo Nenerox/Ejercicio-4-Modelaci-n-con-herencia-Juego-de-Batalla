@@ -18,15 +18,20 @@ public class Controlador {
             this.inventario = itemsExplorador;
         }
     }
+    public ArrayList<String> getInventario (){
+        return inventario;
+    }
 
     public void usarItems(String item){
         if (item.equalsIgnoreCase("pocion")) {
             jugador.curar(20);
             inventario.remove("Pocion");
+            System.out.println("Te has curado 20 de vida");
         } else if (item.equalsIgnoreCase("antidoto")) {
             jugador.setEfecto(0);
             jugador.setEnvenenado(false);
             inventario.remove("Antidoto");
+            System.out.println("Te has curado del veneno");
         }
     }
 
@@ -61,7 +66,20 @@ public class Controlador {
             return jefe;
         }
 
+    public boolean hayEnemigosVivos(List<Personaje> enemigos) {
+        for (Personaje e : enemigos) {
+            if (e.estaVivo()) return true;
+        }
+        return false;
+    }
+
     public void enemigoUsaHabilidad(Enemigo enemigo) {
     jugador.recibirDaño(enemigo.usarHabilidad());
+    }
+    public String enemigoNombreHabilidad(Enemigo enemigo){
+        return enemigo.getNombreHabilidad();
+    }
+    public int enemigoAtaqueHabilidad(Enemigo enemigo){
+        return enemigo.getAtaqueHabilidad();
     }
 }
