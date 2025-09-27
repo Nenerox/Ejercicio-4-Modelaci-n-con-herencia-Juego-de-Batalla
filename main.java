@@ -140,6 +140,11 @@ public class main {
                                 controlador.atacarJugador(jefe.get(0).getAtaque());
                                 System.out.println(jefe.get(0).getNombre()+" ataco e hizo: "+ jefe.get(0).getAtaque());
                             } else {
+                                if (jefe.get(0).getNombre().equals("Rey Rata")) {
+                                controlador.jugador.setEfecto(5);
+                                controlador.jugador.setEnvenenado(true);
+                                System.out.println("Haz sido envenenado, recibiras 5 de daño cada turno");
+                            }
                                 controlador.enemigoUsaHabilidad((Enemigo) jefe.get(0));
                                 System.out.println(jefe.get(0).getNombre()+" uso "+controlador.enemigoNombreHabilidad((Enemigo) jefe.get(0))+" hizo "+controlador.enemigoAtaqueHabilidad((Enemigo) jefe.get(0)));
                             }
