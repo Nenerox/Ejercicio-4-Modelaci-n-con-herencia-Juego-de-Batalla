@@ -52,6 +52,9 @@ public class main {
                     int enemigo = (scanner.nextInt() - 1);
                     scanner.nextLine();
                     controlador.atacarEnemigo(bestias.get(enemigo));
+                    if (bestias.get(enemigo).getSalud() == 0){
+                        System.out.println(bestias.get(enemigo).getMensaje_Muerte());
+                    }
                     break;
                 }
                 case 2: {
@@ -150,6 +153,7 @@ public class main {
                             }
                         }
                     }
+                    System.out.println(jefe.get(0).getMensaje_Muerte());
                     System.out.println("Haz ganado contra el jefe es hora de salir");
                     salir = true; // Salir del juego tras jefe
                 }
@@ -165,6 +169,7 @@ public class main {
         }
 
         if (controlador.jugador.estaVivo() == false) {
+            System.out.println(controlador.jugador.getMensaje_Muerte());
             System.out.println("Te mataron, recuerda que aveces la recompensa no vale el riesgo.");   
         }
     }
